@@ -26,8 +26,8 @@ from .nanoStats import nano_nodeProcess, nanoProm
 from .repeatedTimer import RepeatedTimer
 
 logging.basicConfig(format="%(asctime)s %(levelname)-8s %(message)s", level=os.environ.get("LOGLEVEL", "INFO").upper(), datefmt="%Y-%m-%d %H:%M:%S")
-logging.getLogger("requests").setLevel(logging.WARNING)
-logging.getLogger("urllib3").setLevel(logging.WARNING)
+logging.getLogger("requests").setLevel(logging.CRITICAL)
+logging.getLogger("urllib3").setLevel(logging.CRITICAL)
 
 
 def generate_runid():
@@ -69,7 +69,8 @@ def try_gather_process_stats():
     try:
         process_stats.node_process_stats()
     except Exception as e:
-        logging.exception(e)
+        logging.debug(e, exc_info=True)
+        logging.warning(f"Failed to gather process stats: {repr(e)}")
 
 
 def main_impl():
@@ -97,7 +98,8 @@ def main():
         try:
             main_impl()
         except Exception as e:
-            logging.exception(e)
+            logging.error(f"Error: {repr(e)}")
+            logging.debug(e, exc_info=True)
 
         logging.debug("Sleeping for: %s", args.interval)
         time.sleep(args.interval)
