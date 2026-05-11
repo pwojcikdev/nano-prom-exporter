@@ -285,7 +285,7 @@ class nanoProm:
         self.telemetry_raw_maker = Gauge(
             "telemetry_raw_maker",
             "Raw Telemetry maker by endpoint",
-            ["endpoint"],
+            ["endpoint", "maker"],
             registry=registry,
         )
         self.telemetry_raw_timestamp = Gauge(
@@ -369,9 +369,9 @@ class nanoProm:
             self.telemetry_raw_uptime.labels(endpoint=endpoint.endpoint).set(
                 endpoint.uptime
             )
-            self.telemetry_raw_maker.labels(endpoint=endpoint.endpoint).set(
-                endpoint.maker
-            )
+            self.telemetry_raw_maker.labels(
+                endpoint=endpoint.endpoint, maker=str(endpoint.maker)
+            ).set(1)
             self.telemetry_raw_timestamp.labels(endpoint=endpoint.endpoint).set(
                 endpoint.timestamp
             )
