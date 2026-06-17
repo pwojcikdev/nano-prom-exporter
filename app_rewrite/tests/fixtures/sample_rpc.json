@@ -1,0 +1,105 @@
+{
+  "version": {
+    "rpc_version": "1",
+    "store_version": "21",
+    "protocol_version": "19",
+    "node_vendor": "Nano V25.1",
+    "store_vendor": "LMDB 0.9.29",
+    "network": "live",
+    "network_identifier": "991CF190094C00F0B68E2E5F75F6BEE95A2E0BD93CEAA4A6734DB9F19B728948",
+    "build_info": "abc123"
+  },
+  "block_count": {
+    "count": "180000000",
+    "unchecked": "5",
+    "cemented": "179999990"
+  },
+  "peers": {
+    "peers": {
+      "[::ffff:1.2.3.4]:7075": { "protocol_version": "19" },
+      "[::ffff:5.6.7.8]:7075": { "protocol_version": "19" }
+    }
+  },
+  "stats_counters": {
+    "type": "counters",
+    "created": "2026.05.28 12:00:00",
+    "entries": [
+      { "time": "12:00:00", "type": "traffic_tcp", "detail": "all", "dir": "in", "value": "123" },
+      { "time": "12:00:00", "type": "message", "detail": "publish", "dir": "out", "value": "456" }
+    ]
+  },
+  "stats_objects": {
+    "node": {
+      "vote_processor": {
+        "votes": { "count": "1", "size": "2" }
+      },
+      "active": {
+        "roots": { "count": "3", "size": "4" },
+        "election_winner_details": { "count": "5", "size": "6" }
+      },
+      "deep": {
+        "a": {
+          "b": { "count": "7", "size": "8" }
+        }
+      }
+    }
+  },
+  "uptime": { "seconds": "123456" },
+  "active_difficulty": {
+    "multiplier": "1.0",
+    "network_current": "fffffff800000000",
+    "network_receive_current": "c000000000000000",
+    "network_receive_minimum": "8000000000000000",
+    "network_minimum": "fffffff800000000"
+  },
+  "frontier_count": { "count": "30000000" },
+  "confirmation_quorum": {
+    "quorum_delta": "112000000000000000000000000000000000000",
+    "online_weight_quorum_percent": "67",
+    "online_stake_total": "130000000000000000000000000000000000000",
+    "peers_stake_total": "125000000000000000000000000000000000000",
+    "trended_stake_total": "129000000000000000000000000000000000000"
+  },
+  "telemetry_raw": {
+    "metrics": [
+      {
+        "block_count": "179999900",
+        "cemented_count": "179999800",
+        "unchecked_count": "0",
+        "account_count": "29000000",
+        "bandwidth_cap": "10485760",
+        "peer_count": "200",
+        "protocol_version": "19",
+        "major_version": "25",
+        "minor_version": "1",
+        "patch_version": "0",
+        "pre_release_version": "0",
+        "uptime": "604800",
+        "maker": "0",
+        "timestamp": "1716800000000",
+        "active_difficulty": "fffffff800000000",
+        "genesis_block": "991CF190094C00F0B68E2E5F75F6BEE95A2E0BD93CEAA4A6734DB9F19B728948",
+        "node_id": "node_3abc",
+        "address": "::ffff:1.2.3.4",
+        "port": "7075"
+      }
+    ]
+  },
+  "telemetry": {
+    "block_count": "179999850",
+    "cemented_count": "179999750",
+    "unchecked_count": "0",
+    "account_count": "29000001",
+    "bandwidth_cap": "10485760",
+    "peer_count": "201",
+    "protocol_version": "19",
+    "major_version": "25",
+    "minor_version": "1",
+    "patch_version": "0",
+    "pre_release_version": "0",
+    "uptime": "604700",
+    "maker": "0",
+    "timestamp": "1716800001000",
+    "active_difficulty": "fffffff800000000"
+  }
+}

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nano-prom-exporter"
+version = "0.2.0"
+description = "Export nano_node stats to a Prometheus Pushgateway"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = [
+    "prometheus-client",
+    "requests",
+    "psutil",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+nano-prom = "nano_prom.app:main"
+
+[tool.setuptools]
+packages = ["nano_prom"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
